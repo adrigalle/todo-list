@@ -99,9 +99,9 @@ function App(){
                 checked={completedTodo.isCompleted}
                 onChange={()=> reAddTodo(index, completedTodo.text)}
               />
-
-              <div className="todo-text all-done">{completedTodo.text}</div>
-
+              <div className="todo-text all-done">
+                {completedTodo.text}
+              </div>
               <div>
                 <span className="material-symbols-outlined" onClick={removeDoneTodo}>delete</span>
               </div>

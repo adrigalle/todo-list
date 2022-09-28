@@ -26,13 +26,11 @@ function Todo({todo,index,remove,editTodo, completed}){
         onChange={()=> handleComplete(todo.index)} 
         checked={todo.isCompleted}
       />
-
       <div className="todo-text">
         {todoEditing === todo.index ? 
         (<input type="text" onChange={(e) => setEditingText(e.target.value)} value={editingText}/>) : 
         <div>{todo.text}</div>}
       </div>
-
       <div className="edit-delete">
         {todoEditing === todo.index ? 
           (<span className="material-symbols-outlined" onClick={() => handleEdit(index)}>
@@ -42,9 +40,9 @@ function Todo({todo,index,remove,editTodo, completed}){
           edit
           </span>
         )}
-
         <span className="material-symbols-outlined" onClick={handle}>delete</span>
       </div>
+
     </div> 
   )
 } 
