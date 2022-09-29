@@ -99,7 +99,7 @@ function App(){
                 checked={completedTodo.isCompleted}
                 onChange={()=> reAddTodo(index, completedTodo.text)}
               />
-              <div className="todo-text all-done">
+              <div className="todo-text all-done" key={index.toString()}>
                 {completedTodo.text}
               </div>
               <div>

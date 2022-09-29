@@ -29,7 +29,7 @@ function Todo({todo,index,remove,editTodo, completed}){
       <div className="todo-text">
         {todoEditing === todo.index ? 
         (<input type="text" onChange={(e) => setEditingText(e.target.value)} value={editingText}/>) : 
-        <div>{todo.text}</div>}
+        <div key={index.toString()}>{todo.text}</div>}
       </div>
       <div className="edit-delete">
         {todoEditing === todo.index ? 
