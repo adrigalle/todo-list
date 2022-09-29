@@ -10,7 +10,7 @@ code {
 }
 
 .app {
-  background: #ffc4a9;
+  background: radial-gradient(117.05% 206.35% at 13.95% 14.18%, rgba(255, 147, 32, 0) 0%, #FEAA67 100%), #FFC4A9;;
   padding: 30px;
   height: 100vh;
 }
