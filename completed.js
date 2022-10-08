@@ -9,7 +9,7 @@ function FinishedTodo({index, remove, addTodo}){
     }
 
 
-    return (
+    return ( 
         <div className="done" >
             <input
                 type='checkbox'

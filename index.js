@@ -25,7 +25,6 @@ function App(){
       isCompleted: true,
     }
   ]);
-  const [todoEditing, setTodoEditing] = React.useState(null);
 
   const addTodo = text => {
     const newTodos = [...todos, {text, isCompleted:false}];
@@ -35,19 +34,16 @@ function App(){
   const removeTodo = index => {
     let temp = [...todos];    
     temp.splice(index, 1);
-    setTodos(temp); 
+    setTodos(temp);
+    console.log(todos) ;
   }
   // this takes the index that is passed
   // geet a handle on the current todos
   // temp list will spice, remove at the index and just one, and then pass the temp to the newState to update the new list
   function editTodo(index, editingText){
-    let updatedTodos = [...todos].map((todo) => {
-      todo[index].text = editingText;
-      return todos;
-    })
+    let updatedTodos = [...todos];
+    updatedTodos.splice(index, 1, {text:editingText, isCompleted:false});
     setTodos(updatedTodos);
-    setTodoEditing(null);
-
     console.log(todos);
   }
  
@@ -80,7 +76,7 @@ function App(){
 
   return(
     <div className="app">
-
+ 
       <div className="todo-list" >
         {todos.map((todo, i) => (
           <Todo key={i} index={i} completed={completeTodo} todo={todo} editTodo={editTodo} remove={removeTodo}/>
@@ -93,7 +89,7 @@ function App(){
         <h2>All Done</h2>
         <div className="todo-list" key={completedTodos.index}>
           {completedTodos.map((completedTodo, index)=> (
-            <div className="todo">
+            <div className="todo" key={index.toString()}>
               <input
                 type='checkbox'
                 checked={completedTodo.isCompleted}
